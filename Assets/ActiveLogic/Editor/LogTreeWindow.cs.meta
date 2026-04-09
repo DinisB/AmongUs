@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 87284c04893db4dde999fc0e32645728
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 183959
+  packageName: 'Active LT: Behavior Trees'
+  packageVersion: 1.3.2
+  assetPath: Assets/ActiveLogic/Editor/LogTreeWindow.cs
+  uploadId: 527895

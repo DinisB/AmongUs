@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 63f7a70ea4c254a739879e88f737d6d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 183959
+  packageName: 'Active LT: Behavior Trees'
+  packageVersion: 1.3.2
+  assetPath: Assets/ActiveLogic/Src/Core/Details/StatusDetails.cs
+  uploadId: 527895
