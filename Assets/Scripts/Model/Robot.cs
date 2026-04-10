@@ -1,4 +1,6 @@
-public class Robot : IAgent
+namespace Projeto1IA
 {
-
+    public class Robot : IAgent
+    {
+    }
 }

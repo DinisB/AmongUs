@@ -4572,8 +4572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2253c9eab18bb4db492485c3c23438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AgentManager
-  numberOfCrewmates: 50
-  numberOfRobots: 50
+  numbers: 3200000032000000
+  typesOfAgents:
+  - Crewmate
+  - Robot
 --- !u!4 &1594692476
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,6 @@
-public class Crewmate : IAgent
+namespace Projeto1IA
 {
-
+    public class Crewmate : IAgent
+    {
+    }
 }

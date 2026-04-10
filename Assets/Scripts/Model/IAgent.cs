@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public interface IAgent
+namespace Projeto1IA
 {
-    
+    public interface IAgent
+    {
+    }
 }
