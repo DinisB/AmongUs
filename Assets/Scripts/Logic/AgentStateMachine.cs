@@ -4,21 +4,47 @@ using static Active.Raw;
 
 namespace Projeto1IA
 {
-    public abstract class AgentStateMachine : MonoBehaviour, IAgentStates
+    public abstract class AgentStateMachine : IAgentStates
     {
         protected status currentState;
+        protected bool isInEmergency = false;
+        protected float emergencyMultiplier = 1.5f;
+        protected bool isEnabled = true;
 
-        protected virtual void Update()
+        public virtual void UpdateState()
         {
-            currentState = Sleep() || Working("") || Fix("");
+            if (isInEmergency)
+            {
+                currentState = RespondToIncident() || Evacuate();
+            }
+            else
+            {
+                currentState = Idle() || Work("") || Sleep() || Restock() || Recharge();
+            }
+
             if (!currentState.running)
             {
-                enabled = false;
+                isEnabled = false;
             }
         }
 
+        public abstract status Idle();
+        public abstract status Work(string task);
         public abstract status Sleep();
-        public abstract status Working(string task);
-        public abstract status Fix(string task);
+        public abstract status Restock();
+        public abstract status Recharge();
+        public abstract status RespondToIncident();
+        public abstract status Evacuate();
+
+        public void TriggerEmergency()
+        {
+            isInEmergency = true;
+            isEnabled = true;
+        }
+
+        public void ResolveEmergency()
+        {
+            isInEmergency = false;
+        }
     }
 }

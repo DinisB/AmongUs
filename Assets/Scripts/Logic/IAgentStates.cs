@@ -6,8 +6,12 @@ namespace Projeto1IA
 {
     public interface IAgentStates
     {
+        status Idle();
+        status Work(string task);
         status Sleep();
-        status Working(string task);
-        status Fix(string task);
+        status Restock();
+        status Recharge();
+        status RespondToIncident();
+        status Evacuate();
     }
 }

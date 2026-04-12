@@ -29,8 +29,18 @@ namespace Projeto1IA
                 {
                     IAgent agent = agentFactory.CreateAgent(typesOfAgents[i]);
                     agents.Add(agent);
+                    Transform spawnpoint;
 
-                    Transform spawnpoint = i == 0 ? dorms[Random.Range(0, dorms.Length)] : workstations;
+                    if (typesOfAgents[i] == "Crewmate" && agent is Crewmate crewmate)
+                    {
+                        int dormIndex = Random.Range(0, dorms.Length);
+                        crewmate.AssignedDorm = dormIndex;
+                        spawnpoint = dorms[dormIndex];
+                    }
+                    else
+                    {
+                        spawnpoint = workstations;
+                    }
 
                     Vector3 spawnPosition;
                     int attempts = 0;
@@ -39,8 +49,8 @@ namespace Projeto1IA
                         Vector3 randomOffset = new Vector3(Random.Range(-spawnRadius, spawnRadius), 0f, Random.Range(-spawnRadius, spawnRadius));
                         spawnPosition = spawnpoint.position + randomOffset;
                         attempts++;
-                    } 
-                    
+                    }
+
                     while (Physics.CheckSphere(spawnPosition, 0.5f) && attempts < 10);
 
                     GameObject go = Instantiate(agentPrefab[i], spawnPosition, Quaternion.identity);
@@ -54,7 +64,7 @@ namespace Projeto1IA
         // Update is called once per frame
         private void Update()
         {
-        
+
         }
     }
 }
