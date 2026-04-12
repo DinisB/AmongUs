@@ -8,6 +8,7 @@ namespace Projeto1IA
     {
         private IAgent self;
         private NavMeshAgent navMeshAgent;
+        private IAgentStates stateMachine;
         private int health;
         private int energy;
 

@@ -4,11 +4,13 @@ namespace Projeto1IA
     {
         public int Energy { get; set; }
         public int Health { get; set; }
+        public IAgentStates StateMachine { get; set; }
 
         public Robot()
         {
             Energy = 150;
             Health = 150;
+            StateMachine = new RobotStates();
         }
     }
 }

@@ -54,15 +54,7 @@ namespace Projeto1IA
         // Update is called once per frame
         private void Update()
         {
-            TesteDeClique();
-        }
-
-        private void TesteDeClique() // para testar se eles movem
-        {
-            if (Input.GetMouseButtonDown(0) && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
-            {
-                controllers[Random.Range(0, controllers.Count)].MoveTo(hit.point);
-            }
+        
         }
     }
 }

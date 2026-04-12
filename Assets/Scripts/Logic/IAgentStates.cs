@@ -1,22 +1,13 @@
 using UnityEngine;
-using Active.Core;                
+using Active.Core;
 using static Active.Raw;
 
-public abstract class IAgentStates : MonoBehaviour {
-
-    public status state;
-
-    void Update(){
-        state = Sleep() || Working("") || Fix("");
-        if(!state.running){
-            enabled = false;
-        }
-    }
-
-    protected abstract status Sleep();
-    protected abstract status Working(string task);
-    private status Fix(string task)
+namespace Projeto1IA
+{
+    public interface IAgentStates
     {
-        return new status();
+        status Sleep();
+        status Working(string task);
+        status Fix(string task);
     }
 }

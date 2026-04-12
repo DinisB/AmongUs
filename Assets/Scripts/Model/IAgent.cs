@@ -6,5 +6,6 @@ namespace Projeto1IA
     {
         public int Energy { get; set; }
         public int Health { get; set; }
+        public IAgentStates StateMachine { get; set; }
     }
 }
