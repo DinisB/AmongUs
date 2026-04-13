@@ -7,7 +7,6 @@ namespace Projeto1IA
     public class LocationManager : MonoBehaviour
     {
         private static IDictionary<string, Location> _locations = new Dictionary<string, Location>();
-        private static LocationManager _instance;
         [SerializeField] private LayerMask _agentLayer;
 
         public static void RegisterLocation(Location _location)
