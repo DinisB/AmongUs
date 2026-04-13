@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4618019105755543049}
   - component: {fileID: 5097579294862046347}
   - component: {fileID: 4591890171744908488}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TripulanteAgent
   m_TagString: Untagged
   m_Icon: {fileID: 0}

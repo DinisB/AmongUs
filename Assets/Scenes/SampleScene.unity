@@ -277,8 +277,9 @@ GameObject:
   - component: {fileID: 64299622}
   - component: {fileID: 64299621}
   - component: {fileID: 64299624}
+  - component: {fileID: 64299625}
   m_Layer: 0
-  m_Name: "Zona T\xE9cnica"
+  m_Name: TechZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,6 +410,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 18e33b5e1b74a6146880096a89c186bf, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &64299625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64299619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 4
+  _locationId: 1
+  _capacity: 10
 --- !u!1 &109526864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1124,167 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &421212797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421212798}
+  - component: {fileID: 421212803}
+  - component: {fileID: 421212802}
+  - component: {fileID: 421212801}
+  - component: {fileID: 421212800}
+  - component: {fileID: 421212799}
+  m_Layer: 0
+  m_Name: Pod2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &421212798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421212797}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 53.14, y: 1, z: -14.45}
+  m_LocalScale: {x: 4.70373, y: 1, z: 2.080029}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672219453}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &421212799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421212797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 6
+  _locationId: 2
+  _capacity: 10
+--- !u!114 &421212800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421212797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 179a98d44ceb5af42a560ccf34139925, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!65 &421212801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421212797}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &421212802
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421212797}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea2432dc2860a6348ac830b16e51de8c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &421212803
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421212797}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &451347491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,8 +2284,9 @@ GameObject:
   - component: {fileID: 837450905}
   - component: {fileID: 837450904}
   - component: {fileID: 837450907}
+  - component: {fileID: 837450908}
   m_Layer: 0
-  m_Name: "Dormit\xF3rio 1"
+  m_Name: Dorm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2239,6 +2417,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2363cb28d3fa505488bc41a614f296e9, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &837450908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837450902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 0
+  _locationId: 1
+  _capacity: 10
 --- !u!1 &864960245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,7 +2590,7 @@ GameObject:
   - component: {fileID: 896955874}
   - component: {fileID: 896955873}
   m_Layer: 0
-  m_Name: Caixa
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3234,8 +3427,9 @@ GameObject:
   - component: {fileID: 1098145074}
   - component: {fileID: 1098145073}
   - component: {fileID: 1098145076}
+  - component: {fileID: 1098145077}
   m_Layer: 0
-  m_Name: "Dormit\xF3rio 2"
+  m_Name: Dorm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3366,6 +3560,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 7feefdf4ea1e73d47b94f144c41f065a, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1098145077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098145071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 0
+  _locationId: 2
+  _capacity: 10
 --- !u!1 &1120007714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,8 +3878,9 @@ GameObject:
   - component: {fileID: 1223940675}
   - component: {fileID: 1223940674}
   - component: {fileID: 1223940677}
+  - component: {fileID: 1223940678}
   m_Layer: 0
-  m_Name: "Laborat\xF3rio"
+  m_Name: Lab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3802,6 +4012,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 7e94a21575a4dc043a460e8fdbf3c1b1, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1223940678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223940672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 1
+  _locationId: 1
+  _capacity: 10
 --- !u!1 &1232475774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,8 +4185,9 @@ GameObject:
   - component: {fileID: 1428345696}
   - component: {fileID: 1428345695}
   - component: {fileID: 1428345698}
+  - component: {fileID: 1428345699}
   m_Layer: 0
-  m_Name: "Produ\xE7\xE3o de Recursos"
+  m_Name: Workstation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4092,6 +4318,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 37186bf0055917349bc0610a58351294, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1428345699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428345693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 5
+  _locationId: 1
+  _capacity: 10
 --- !u!1 &1448400704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4105,8 +4346,9 @@ GameObject:
   - component: {fileID: 1448400707}
   - component: {fileID: 1448400706}
   - component: {fileID: 1448400709}
+  - component: {fileID: 1448400710}
   m_Layer: 0
-  m_Name: Estufa
+  m_Name: Greenhouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4237,6 +4479,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9e98abe383cfb9c4d9a399bef2ac09b7, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1448400710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448400704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 2
+  _locationId: 1
+  _capacity: 10
 --- !u!1 &1513374416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4391,7 +4648,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594692476}
-  - component: {fileID: 1594692475}
+  - component: {fileID: 1594692479}
+  - component: {fileID: 1594692478}
+  - component: {fileID: 1594692477}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4399,30 +4658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1594692475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594692474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2253c9eab18bb4db492485c3c23438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AgentManager
-  numbers: 3200000032000000
-  typesOfAgents:
-  - Crewmate
-  - Robot
-  agentPrefab:
-  - {fileID: 1040682068251098576, guid: ed0bcfb6eeb644b4db973f471bbce6e8, type: 3}
-  - {fileID: 6075594393123104415, guid: 5879658a0a0acb84f93a12643d7d94f8, type: 3}
-  dorms:
-  - {fileID: 837450903}
-  - {fileID: 1098145072}
-  workstations: {fileID: 64299620}
-  spawnRadius: 5
 --- !u!4 &1594692476
 Transform:
   m_ObjectHideFlags: 0
@@ -4438,6 +4673,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1594692477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594692474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7175fa384dde60640bb58a57013a8432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.AgentManager
+  numbers: 3200000032000000
+  typesOfAgents:
+  - Crewmate
+  - Robot
+  agentPrefab:
+  - {fileID: 1040682068251098576, guid: ed0bcfb6eeb644b4db973f471bbce6e8, type: 3}
+  - {fileID: 6075594393123104415, guid: 5879658a0a0acb84f93a12643d7d94f8, type: 3}
+  dorms:
+  - {fileID: 837450903}
+  - {fileID: 1098145072}
+  technicalAreas:
+  - {fileID: 64299620}
+  spawnRadius: 2
+--- !u!114 &1594692478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594692474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b43c36981d40341870d428f207e304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.LocationManager
+  _agentLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &1594692479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594692474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d09d6b30112034bb9b6c67bfc60939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.NavigationManager
 --- !u!1 &1597099286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5054,6 +5341,8 @@ Transform:
   - {fileID: 1448400705}
   - {fileID: 1879465147}
   - {fileID: 1223940673}
+  - {fileID: 1745600312}
+  - {fileID: 421212798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740122507
@@ -5201,6 +5490,167 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 84a14d213f1bd6146ac6d0cb84b1c810, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1745600311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745600312}
+  - component: {fileID: 1745600317}
+  - component: {fileID: 1745600316}
+  - component: {fileID: 1745600315}
+  - component: {fileID: 1745600314}
+  - component: {fileID: 1745600313}
+  m_Layer: 0
+  m_Name: Pod1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745600312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745600311}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 53.14, y: 1, z: -25}
+  m_LocalScale: {x: 4.70373, y: 1, z: 2.080029}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672219453}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1745600313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745600311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 6
+  _locationId: 1
+  _capacity: 10
+--- !u!114 &1745600314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745600311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 7a8f0ddeea778c54880fa4588592b988, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!65 &1745600315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745600311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1745600316
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745600311}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea2432dc2860a6348ac830b16e51de8c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1745600317
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745600311}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1750367764
 GameObject:
   m_ObjectHideFlags: 0
@@ -5504,7 +5954,7 @@ GameObject:
   - component: {fileID: 1782243801}
   - component: {fileID: 1782243800}
   m_Layer: 0
-  m_Name: Mesa
+  m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5761,8 +6211,9 @@ GameObject:
   - component: {fileID: 1879465149}
   - component: {fileID: 1879465148}
   - component: {fileID: 1879465151}
+  - component: {fileID: 1879465152}
   m_Layer: 0
-  m_Name: "Armaz\xE9m"
+  m_Name: Warehouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5895,6 +6346,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c4e24d59c006a1c4fa9443f755a7d4c2, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1879465152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879465146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08f4385f75c2e449869a03e7fdde0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
+  _locationType: 3
+  _locationId: 1
+  _capacity: 10
 --- !u!1 &1909942900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6923,7 +7389,7 @@ GameObject:
   - component: {fileID: 2119944863}
   - component: {fileID: 2119944862}
   m_Layer: 0
-  m_Name: Caixa
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
