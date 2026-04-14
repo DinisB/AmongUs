@@ -21,7 +21,7 @@ namespace Projeto1IA
 
         private bool _destinationSet;
 
-        private static readonly string[] _workTasks = { "workstation", "warehouse", "technical", "lab" };
+        private static readonly string[] _workTasks = { "warehouse", "technical", "lab" };
         private string _currentTask;
 
         public RobotStates(ILocationProvider _locations)
@@ -58,7 +58,7 @@ namespace Projeto1IA
                 "warehouse" => LocationType.Warehouse,
                 "technical" => LocationType.Technical,
                 "lab"       => LocationType.Laboratory,
-                _           => LocationType.Workstation
+                _           => LocationType.Technical
             };
 
             if (!_destinationSet)
