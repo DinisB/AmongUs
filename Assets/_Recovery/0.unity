@@ -249,7 +249,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &20403638
 Transform:
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e9e9c5726b5c2454c9bb227b24ab0521, type: 2}
   m_BuildHeightMesh: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d3d621c38e1c0074fafac5d19d29cc9b, type: 2}
   m_BuildHeightMesh: 0
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d7e8f7067c4d4e24b8e007d7afe8dea1, type: 2}
   m_BuildHeightMesh: 0
@@ -2198,7 +2198,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 7a870ae98107bd649a45f673d44a1aa7, type: 2}
   m_BuildHeightMesh: 0
@@ -4368,7 +4368,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &302957955
 Transform:
@@ -5084,7 +5084,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &340978126
 Transform:
@@ -5666,7 +5666,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9df9238c29aec624c9127a0d84be22fd, type: 2}
   m_BuildHeightMesh: 0
@@ -7012,7 +7012,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 179a98d44ceb5af42a560ccf34139925, type: 2}
   m_BuildHeightMesh: 0
@@ -7574,7 +7574,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2ef9fedbb6b83074696042420923892b, type: 2}
   m_BuildHeightMesh: 0
@@ -8386,7 +8386,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &484962220
 Transform:
@@ -12054,7 +12054,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &675812129
 Transform:
@@ -12107,7 +12107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 20403637}
-  _useObstacle: 0
 --- !u!33 &675812132
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12361,7 +12360,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &699378030
 Transform:
@@ -12414,7 +12413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 1752334659}
-  _useObstacle: 0
 --- !u!33 &699378033
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12678,7 +12676,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 1c09c4f92cc938c4995cdcecca89e345, type: 2}
   m_BuildHeightMesh: 0
@@ -13279,7 +13277,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: fe57d194a9bd7c544826b758561a460f, type: 2}
   m_BuildHeightMesh: 0
@@ -13538,7 +13536,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2d66ff06da13da043a1204520ec3ce7e, type: 2}
   m_BuildHeightMesh: 0
@@ -14362,7 +14360,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c7182e06702e9044396d08f3661bfdc1, type: 2}
   m_BuildHeightMesh: 0
@@ -15121,7 +15119,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c7bf5ca9e0c507c4cb01a1631c233423, type: 2}
   m_BuildHeightMesh: 0
@@ -15379,7 +15377,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 6a024650c5432f044b0790b95a3eada0, type: 2}
   m_BuildHeightMesh: 0
@@ -16559,7 +16557,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f0da2306c6fdde94bae814f82fea1cd6, type: 2}
   m_BuildHeightMesh: 0
@@ -18630,7 +18628,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0a384ff3e07d9c54593a303b3b81bc57, type: 2}
   m_BuildHeightMesh: 0
@@ -19115,7 +19113,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 5ef5b5e2301983d41b97e406a89ea00a, type: 2}
   m_BuildHeightMesh: 0
@@ -20167,7 +20165,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 5184cf4a460aab4458df8a10fcf14744, type: 2}
   m_BuildHeightMesh: 0
@@ -20312,7 +20310,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d1328351baaa349429020283bfed7240, type: 2}
   m_BuildHeightMesh: 0
@@ -20683,7 +20681,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 306df80767c0fe948bf831e693a32dcd, type: 2}
   m_BuildHeightMesh: 0
@@ -20704,7 +20702,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1088610028
 Transform:
@@ -20757,7 +20755,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 340978125}
-  _useObstacle: 0
 --- !u!33 &1088610031
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21022,7 +21019,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 26b1e29eb12d40540905e38e7b89e598, type: 2}
   m_BuildHeightMesh: 0
@@ -21396,7 +21393,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1108373914
 Transform:
@@ -21449,7 +21446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 1657460004}
-  _useObstacle: 0
 --- !u!33 &1108373917
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21765,7 +21761,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 6243130d3ec057649ad910e7eab50acd, type: 2}
   m_BuildHeightMesh: 0
@@ -22012,7 +22008,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1134635098
 Transform:
@@ -22065,7 +22061,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 302957954}
-  _useObstacle: 0
 --- !u!33 &1134635101
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22717,7 +22712,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8e8c4fd5aa4537247a55552289a7f510, type: 2}
   m_BuildHeightMesh: 0
@@ -23205,7 +23200,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 84e006f9247e3be49b097a2e31ef4370, type: 2}
   m_BuildHeightMesh: 0
@@ -23479,7 +23474,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c3fdcdc9248819844b5d32a5fc55a302, type: 2}
   m_BuildHeightMesh: 0
@@ -23839,7 +23834,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1263523406
 Transform:
@@ -26379,7 +26374,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f9a995fe5e61429468ea656440032615, type: 2}
   m_BuildHeightMesh: 0
@@ -26664,7 +26659,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 6b5f9d3db948d434bbf8179c0302bb62, type: 2}
   m_BuildHeightMesh: 0
@@ -27502,7 +27497,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d3aeabda1b5743540902ecb218af0905, type: 2}
   m_BuildHeightMesh: 0
@@ -27979,7 +27974,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1554320391
 Transform:
@@ -28032,7 +28027,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 1263523405}
-  _useObstacle: 0
 --- !u!33 &1554320394
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28775,7 +28769,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2ae1ba6bc71a5ae4580bf546372856f2, type: 2}
   m_BuildHeightMesh: 0
@@ -29486,7 +29480,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ad840e25efa0fa340bbff7562a16bff3, type: 2}
   m_BuildHeightMesh: 0
@@ -29631,7 +29625,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 84a2c03d1c923554687758180e63087a, type: 2}
   m_BuildHeightMesh: 0
@@ -29776,7 +29770,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ff94767b12eb95643ba6a6d4c32789a9, type: 2}
   m_BuildHeightMesh: 0
@@ -29798,7 +29792,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1657460005
 Transform:
@@ -31273,7 +31267,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 84a14d213f1bd6146ac6d0cb84b1c810, type: 2}
   m_BuildHeightMesh: 0
@@ -31356,7 +31350,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 7a8f0ddeea778c54880fa4588592b988, type: 2}
   m_BuildHeightMesh: 0
@@ -31579,7 +31573,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 26f9d3ae6254120428c13c604ef35d14, type: 2}
   m_BuildHeightMesh: 0
@@ -31601,7 +31595,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1752334660
 Transform:
@@ -31843,7 +31837,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1758856462
 Transform:
@@ -31896,7 +31890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _vertical: 1
   _doorVisual: {fileID: 484962219}
-  _useObstacle: 0
 --- !u!33 &1758856465
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32274,7 +32267,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 6a8311dec07c126479d9ffded8f82ba9, type: 2}
   m_BuildHeightMesh: 0
@@ -33569,7 +33562,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: eac0489b3b2a6d547aed09990c654d5c, type: 2}
   m_BuildHeightMesh: 0
@@ -34262,7 +34255,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0174df2d79ee05f4d9501315b36d28da, type: 2}
   m_BuildHeightMesh: 0
@@ -35153,7 +35146,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 30a6d483fc486f44cba892a007a76b56, type: 2}
   m_BuildHeightMesh: 0
@@ -35523,7 +35516,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2cf12a7d19465084dad39e1fdc6c3979, type: 2}
   m_BuildHeightMesh: 0
@@ -35894,7 +35887,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2e5ccfd952a8d9146b18ee88ae0cc86f, type: 2}
   m_BuildHeightMesh: 0
@@ -37962,7 +37955,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 39bf528f18a70b74abe8b7a0f15dfdd2, type: 2}
   m_BuildHeightMesh: 0
@@ -38107,7 +38100,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 5396090020b530a4294b77cfcdb70334, type: 2}
   m_BuildHeightMesh: 0
@@ -38480,7 +38473,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8f354c24e74b4d14bbb58920fa0c534d, type: 2}
   m_BuildHeightMesh: 0
@@ -38965,7 +38958,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0c05cc963e0e9b644bfc2ca39d6dfc4b, type: 2}
   m_BuildHeightMesh: 0
@@ -39678,8 +39671,8 @@ Transform:
   m_GameObject: {fileID: 2142661195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90.2, y: 1, z: 3.377}
-  m_LocalScale: {x: 4.70373, y: 1, z: 1.2461454}
+  m_LocalPosition: {x: 90.2, y: 1, z: 2.96}
+  m_LocalScale: {x: 4.70373, y: 1, z: 2.080029}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651847807}
@@ -39790,7 +39783,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 49a70850a92f7174f9ac77bd0b7fb8d6, type: 2}
   m_BuildHeightMesh: 0
