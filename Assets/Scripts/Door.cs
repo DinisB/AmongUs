@@ -47,7 +47,7 @@ public class Door : MonoBehaviour
 
         bool agentDetected = hits.Length > 0;
 
-        if (agentDetected)
+        if (agentDetected && !_useObstacle)
         {
             OpenDoor();
         }
