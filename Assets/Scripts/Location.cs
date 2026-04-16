@@ -20,6 +20,11 @@ namespace Projeto1IA
         public int Capacity => _capacity;
         public int CurrentOccupancy => _currentOccupancy;
         public bool IsFull => _currentOccupancy >= _capacity;
+        public bool CanEnter()
+        {
+            return !IsFull;
+        }
+
         private LayerMask _agentLayer;
 
         private void Awake()

@@ -27,6 +27,8 @@ namespace Projeto1IA
         private readonly float _restockThreshold;
 
         private bool _destinationSet;
+        private string[] _workTasks = { "lab", "greenhouse", "warehouse", "technical" };
+        private string _currentTask;
 
         public CrewmateStates(ILocationProvider locations, INavigationProvider navigation)
         {
@@ -41,6 +43,7 @@ namespace Projeto1IA
             _restockDrainRate = Random.Range(0.5f, 1.5f);
             _energyThreshold = Random.Range(20f, 35f);
             _restockThreshold = Random.Range(60f, 80f);
+            _currentTask = _workTasks[Random.Range(0, _workTasks.Length)];
         }
 
         public void SetController(AgentController _controller, int _assignedDorm)
@@ -58,23 +61,38 @@ namespace Projeto1IA
             if (_isInEmergency) { RespondToIncident(); return; }
             if (_energy <= _energyThreshold) { Sleep(); return; }
             if (_restockNeed >= _restockThreshold) { Restock(); return; }
-            Work("lab");
+            Work(_currentTask);
         }
 
         public status Idle() => new status();
 
         public status Work(string _task)
         {
-            LocationType _targetType = _task.Contains("greenhouse")
-                ? LocationType.Greenhouse
-                : LocationType.Laboratory;
+        
+            LocationType _targetType = _task switch
+            {
+                "lab" => LocationType.Laboratory,
+                "greenhouse" => LocationType.Greenhouse,
+                "warehouse" => LocationType.Warehouse,
+                "technical" => LocationType.Technical,
+                _ => LocationType.Laboratory
+            };
 
             if (!_destinationSet)
             {
-                Vector3 _pos = _locations.GetRandomPointInLocationType(_targetType);
-                if (_pos == Vector3.zero) return new status();
-                _controller.MoveTo(_pos);
-                _destinationSet = true;
+                Location loc;
+
+                if (_locations.TryGetAvailableLocation(_targetType, out loc))
+                {
+                    Vector3 _pos = loc.GetRandomPointInLocation();
+                    _controller.MoveTo(_pos);
+                    _destinationSet = true;
+                }
+                else
+                {
+                    _destinationSet = false;
+                    return new status();
+                }
             }
 
             if (_controller.HasReachedDestination())
@@ -94,10 +112,21 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                Vector3 _pos = _locations.GetRandomPointInLocation($"Habitation{_assignedDorm + 1}");
-                if (_pos == Vector3.zero) return new status();
-                _controller.MoveTo(_pos);
-                _destinationSet = true;
+                string dormName = $"Habitation{_assignedDorm + 1}";
+
+                Location dorm = LocationManager.GetLocation(dormName);
+
+                if (dorm != null && dorm.CanEnter())
+                {
+                    Vector3 _pos = dorm.GetRandomPointInLocation();
+                    _controller.MoveTo(_pos);
+                    _destinationSet = true;
+                }
+                else
+                {
+                    _destinationSet = false;
+                    return new status();
+                }
             }
 
             if (_controller.HasReachedDestination())
@@ -118,10 +147,19 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                Vector3 _pos = _locations.GetRandomPointInLocationType(LocationType.Warehouse);
-                if (_pos == Vector3.zero) return new status();
-                _controller.MoveTo(_pos);
-                _destinationSet = true;
+                Location loc;
+
+                if (_locations.TryGetAvailableLocation(LocationType.Warehouse, out loc))
+                {
+                    Vector3 _pos = loc.GetRandomPointInLocation();
+                    _controller.MoveTo(_pos);
+                    _destinationSet = true;
+                }
+                else
+                {
+                    _destinationSet = false;
+                    return new status();
+                }
             }
 
             if (_controller.HasReachedDestination())
@@ -142,10 +180,18 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                Vector3 _pos = _locations.GetRandomPointInLocationType(LocationType.Habitation);
-                if (_pos == Vector3.zero) return new status();
-                _controller.MoveTo(_pos);
-                _destinationSet = true;
+                Location loc;
+
+                if (_locations.TryGetAvailableLocation(LocationType.Habitation, out loc))
+                {
+                    Vector3 _pos = loc.GetRandomPointInLocation();
+                    _controller.MoveTo(_pos);
+                    _destinationSet = true;
+                }
+                else
+                {
+                    return new status();
+                }
             }
             return new status();
         }

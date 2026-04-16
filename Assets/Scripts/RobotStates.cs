@@ -63,10 +63,19 @@ namespace Projeto1IA
 
             if (!_destinationSet)
             {
-                Vector3 _pos = _locations.GetRandomPointInLocationType(_targetType);
-                if (_pos == Vector3.zero) return new status();
-                _controller.MoveTo(_pos);
-                _destinationSet = true;
+                Location loc;
+
+                if (_locations.TryGetAvailableLocation(_targetType, out loc))
+                {
+                    Vector3 _pos = loc.GetRandomPointInLocation();
+                    _controller.MoveTo(_pos);
+                    _destinationSet = true;
+                }
+                else
+                {
+                    ChooseAnotherTask();
+                    return new status();
+                }
             }
 
             _battery -= _batteryDrainWork * Time.deltaTime;
@@ -125,6 +134,13 @@ namespace Projeto1IA
 
             _battery -= _batteryDrainWork * Time.deltaTime;
             return new status();
+        }
+        void ChooseAnotherTask()
+        {
+            _destinationSet = false;
+            _workTimer = 0f;
+
+            _currentTask = _workTasks[Random.Range(0, _workTasks.Length)];
         }
 
         public override status Evacuate() => RespondToIncident();
