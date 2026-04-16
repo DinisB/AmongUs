@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Active.Logic.csproj" />
+  <Project Path="Active.Logic.Editors.csproj" />
+</Solution>
