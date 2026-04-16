@@ -15,6 +15,13 @@ namespace Projeto1IA
         private IList<AgentController> _controllers = new List<AgentController>();
         private AgentFactory _agentFactory;
 
+        public static AgentManager Instance { get; private set; }
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private void Start()
         {
             _agentFactory = new AgentFactory();
@@ -75,5 +82,10 @@ namespace Projeto1IA
         }
 
         public IList<AgentController> GetControllers() => _controllers;
+
+        public void RemoveController(AgentController ctrl)
+        {
+            _controllers.Remove(ctrl);
+        }
     }
 }

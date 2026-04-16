@@ -1,11 +1,9 @@
-using UnityEngine;
-
-public class IncidentType : MonoBehaviour
+namespace Projeto1IA
 {
-    public enum Incidents
+    public enum IncidentType
     {
-        fire,
-        powerOutage,
-        oxygenLeak
+        Fire,
+        OxygenLeak,
+        ElectricalFailure
     }
 }

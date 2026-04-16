@@ -9,6 +9,8 @@ namespace Projeto1IA
         private static IDictionary<string, Location> _locations = new Dictionary<string, Location>();
         [SerializeField] private LayerMask _agentLayer;
 
+        private static Dictionary<string, List<string>> _adjacency = new Dictionary<string, List<string>>();
+
         public static void RegisterLocation(Location _location)
         {
             if (!_locations.ContainsKey(_location.LocationName))
@@ -21,6 +23,8 @@ namespace Projeto1IA
         {
             _locations.Remove(_location.LocationName);
         }
+
+        public static Location GetRandomLocation() => _locations.Values.ElementAt(Random.Range(0, _locations.Count));
 
         public static Vector3 GetRandomPointInLocation(string _locationName)
         {
@@ -58,5 +62,29 @@ namespace Projeto1IA
         public static string[] GetAllLocationNames() => _locations.Keys.ToArray();
 
         public LayerMask AgentLayer => _agentLayer;
+
+        public static void AddAdjacency(string a, string b)
+        {
+            if (!_adjacency.ContainsKey(a)) _adjacency[a] = new List<string>();
+            if (!_adjacency.ContainsKey(b)) _adjacency[b] = new List<string>();
+            if (!_adjacency[a].Contains(b)) _adjacency[a].Add(b);
+            if (!_adjacency[b].Contains(a)) _adjacency[b].Add(a);
+        }
+
+        public static Location[] GetAdjacentLocations(Location location)
+        {
+            if (_adjacency.TryGetValue(location.LocationName, out List<string> names))
+            {
+                return names
+                    .Select(n => GetLocation(n))
+                    .Where(l => l != null)
+                    .ToArray();
+            }
+
+            return _locations.Values
+                .Where(l => l != location &&
+                            Vector3.Distance(l.transform.position, location.transform.position) < 20f)
+                .ToArray();
+        }
     }
 }

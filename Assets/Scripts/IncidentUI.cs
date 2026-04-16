@@ -1,16 +1,71 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
 
-public class IncidentUI : MonoBehaviour
+namespace Projeto1IA
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class IncidentUI : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private TMP_Text killedCounterText;
+        [SerializeField] private TMP_Text aliveCounterText;
+        [SerializeField] private GameObject evacuationBanner;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private int killedCount = 0;
+
+        private void Start()
+        {
+            if (IncidentManager.Instance == null) return;
+
+            IncidentManager.Instance.OnAgentKilled += OnAgentKilled;
+            IncidentManager.Instance.OnEvacuationTriggered += OnEvacuation;
+
+            if (evacuationBanner != null)
+                evacuationBanner.SetActive(false);
+
+            RefreshCounters();
+        }
+
+        private void Update()
+        {
+            RefreshAliveCounter();
+        }
+
+        private void OnAgentKilled(AgentController ctrl)
+        {
+            killedCount++;
+            RefreshCounters();
+        }
+
+        private void OnEvacuation()
+        {
+            if (evacuationBanner != null)
+                evacuationBanner.SetActive(true);
+        }
+
+        private void RefreshCounters()
+        {
+            if (killedCounterText != null)
+                killedCounterText.text = "Eliminated: " + killedCount;
+
+            RefreshAliveCounter();
+        }
+
+        private void RefreshAliveCounter()
+        {
+            if (aliveCounterText == null || AgentManager.Instance == null) return;
+
+            int alive = AgentManager.Instance.GetControllers().Count;
+            aliveCounterText.text = "Alive: " + alive;
+        }
+
+        private void OnDestroy()
+        {
+            if (IncidentManager.Instance != null)
+            {
+                IncidentManager.Instance.OnAgentKilled -= OnAgentKilled;
+                IncidentManager.Instance.OnEvacuationTriggered -= OnEvacuation;
+            }
+        }
     }
 }

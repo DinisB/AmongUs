@@ -9,6 +9,8 @@ namespace Projeto1IA
         private NavMeshAgent _nav;
         private AgentStateMachine _stateMachine;
 
+        public Incident CurrentIncident { get; set; }
+
         public IStateMachineOwner Self
         {
             get => _owner;
@@ -33,13 +35,15 @@ namespace Projeto1IA
 
         public void MoveTo(Vector3 _pos)
         {
-            if (_nav.isOnNavMesh)
+            if (_nav != null && _nav.isOnNavMesh)
                 _nav.SetDestination(_pos);
         }
 
         public bool HasReachedDestination()
         {
-            return !_nav.pathPending && _nav.remainingDistance <= _nav.stoppingDistance + 0.1f;
+            return _nav != null &&
+                   !_nav.pathPending &&
+                   _nav.remainingDistance <= _nav.stoppingDistance + 0.1f;
         }
 
         public void TriggerEmergency() => _stateMachine.TriggerEmergency();

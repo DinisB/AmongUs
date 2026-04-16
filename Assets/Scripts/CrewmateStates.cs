@@ -32,60 +32,57 @@ namespace Projeto1IA
 
         public CrewmateStates(ILocationProvider locations, INavigationProvider navigation)
         {
-            _locations = locations;
-            _navigation = navigation;
-            _energy = Random.Range(60f, 100f);
-            _restockNeed = Random.Range(0f, 50f);
-            _sleepDuration = Random.Range(20f, 40f);
-            _workDuration = Random.Range(40f, 80f);
+            _locations   = locations;
+            _navigation  = navigation;
+            _energy          = Random.Range(60f, 100f);
+            _restockNeed     = Random.Range(0f, 50f);
+            _sleepDuration   = Random.Range(20f, 40f);
+            _workDuration    = Random.Range(40f, 80f);
             _restockDuration = Random.Range(10f, 25f);
             _energyDrainRate = Random.Range(1f, 3f);
             _restockDrainRate = Random.Range(0.5f, 1.5f);
             _energyThreshold = Random.Range(20f, 35f);
             _restockThreshold = Random.Range(60f, 80f);
-            _currentTask = _workTasks[Random.Range(0, _workTasks.Length)];
+            _currentTask     = _workTasks[Random.Range(0, _workTasks.Length)];
         }
 
-        public void SetController(AgentController _controller, int _assignedDorm)
+        public void SetController(AgentController controller, int assignedDorm)
         {
-            this._controller = _controller;
-            this._assignedDorm = _assignedDorm;
+            _controller  = controller;
+            _assignedDorm = assignedDorm;
         }
 
         public override void Tick()
         {
-            _energy -= _energyDrainRate * Time.deltaTime;
+            _energy      -= _energyDrainRate  * Time.deltaTime;
             _restockNeed += _restockDrainRate * Time.deltaTime;
 
-            if (_isEvacuating) { Evacuate(); return; }
-            if (_isInEmergency) { RespondToIncident(); return; }
-            if (_energy <= _energyThreshold) { Sleep(); return; }
+            if (_isEvacuating)  { Evacuate();           return; }
+            if (_isInEmergency) { RespondToIncident();  return; }
+            if (_energy <= _energyThreshold)   { Sleep();    return; }
             if (_restockNeed >= _restockThreshold) { Restock(); return; }
             Work(_currentTask);
         }
 
         public status Idle() => new status();
 
-        public status Work(string _task)
+        public status Work(string task)
         {
-        
-            LocationType _targetType = _task switch
+            LocationType targetType = task switch
             {
-                "lab" => LocationType.Laboratory,
+                "lab"        => LocationType.Laboratory,
                 "greenhouse" => LocationType.Greenhouse,
-                "warehouse" => LocationType.Warehouse,
-                "technical" => LocationType.Technical,
-                _ => LocationType.Laboratory
+                "warehouse"  => LocationType.Warehouse,
+                "technical"  => LocationType.Technical,
+                _            => LocationType.Laboratory
             };
 
             if (!_destinationSet)
             {
-                Location loc;
-
-                if (_locations.TryGetAvailableLocation(_targetType, out loc))
+                if (_locations.TryGetAvailableLocation(targetType, out Location loc) &&
+                    !IsLocationDangerous(loc.LocationName))
                 {
-                    Vector3 _pos = loc.GetRandomPointInLocation();
-                    _controller.MoveTo(_pos);
+                    _controller.MoveTo(loc.GetRandomPointInLocation());
                     _destinationSet = true;
                 }
                 else
@@ -113,13 +110,11 @@ namespace Projeto1IA
             if (!_destinationSet)
             {
                 string dormName = $"Habitation{_assignedDorm + 1}";
-
                 Location dorm = LocationManager.GetLocation(dormName);
 
-                if (dorm != null && dorm.CanEnter())
+                if (dorm != null && dorm.CanEnter() && !IsLocationDangerous(dormName))
                 {
-                    Vector3 _pos = dorm.GetRandomPointInLocation();
-                    _controller.MoveTo(_pos);
+                    _controller.MoveTo(dorm.GetRandomPointInLocation());
                     _destinationSet = true;
                 }
                 else
@@ -147,12 +142,10 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                Location loc;
-
-                if (_locations.TryGetAvailableLocation(LocationType.Warehouse, out loc))
+                if (_locations.TryGetAvailableLocation(LocationType.Warehouse, out Location loc) &&
+                    !IsLocationDangerous(loc.LocationName))
                 {
-                    Vector3 _pos = loc.GetRandomPointInLocation();
-                    _controller.MoveTo(_pos);
+                    _controller.MoveTo(loc.GetRandomPointInLocation());
                     _destinationSet = true;
                 }
                 else
@@ -180,19 +173,18 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                Location loc;
+                Location safeHab = FindSafeHabitation();
 
-                if (_locations.TryGetAvailableLocation(LocationType.Habitation, out loc))
+                if (safeHab != null)
                 {
-                    Vector3 _pos = loc.GetRandomPointInLocation();
-                    _controller.MoveTo(_pos);
+                    _controller.MoveTo(safeHab.GetRandomPointInLocation());
                     _destinationSet = true;
                 }
-                else
-                {
-                    return new status();
-                }
             }
+
+            if (_controller.HasReachedDestination())
+                _destinationSet = false;
+
             return new status();
         }
 
@@ -200,16 +192,55 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                NavigationArea _pod = _navigation.FindNearest(_controller.transform.position, AreaType.EscapePod);
-                if (_pod == null) return new status();
+                NavigationArea pod = FindSafeEscapePod();
+                if (pod == null) return new status();
 
-                Vector3 _pos = _pod.GetRandomPointInArea();
-                if (_pos == Vector3.zero) return new status();
+                Vector3 pos = pod.GetRandomPointInArea();
+                if (pos == Vector3.zero) return new status();
 
-                _controller.MoveTo(_pos);
+                _controller.MoveTo(pos);
                 _destinationSet = true;
             }
             return new status();
+        }
+
+
+        private bool IsLocationDangerous(string locationName)
+        {
+            if (IncidentManager.Instance == null) return false;
+            return IncidentManager.Instance.IsLocationImpassable(locationName) ||
+                   IncidentManager.Instance.IsLocationAffected(locationName);
+        }
+
+        private Location FindSafeHabitation()
+        {
+            Location[] habs = LocationManager.GetLocationsByType(LocationType.Habitation);
+            Location nearest = null;
+            float minDist = float.MaxValue;
+
+            foreach (Location hab in habs)
+            {
+                if (IsLocationDangerous(hab.LocationName)) continue;
+                float dist = Vector3.Distance(_controller.transform.position, hab.transform.position);
+                if (dist < minDist) { minDist = dist; nearest = hab; }
+            }
+
+            return nearest;
+        }
+
+        private NavigationArea FindSafeEscapePod()
+        {
+            NavigationArea[] pods = _navigation.GetAreasByType(AreaType.EscapePod);
+            NavigationArea nearest = null;
+            float minDist = float.MaxValue;
+
+            foreach (NavigationArea pod in pods)
+            {
+                float dist = Vector3.Distance(_controller.transform.position, pod.transform.position);
+                if (dist < minDist) { minDist = dist; nearest = pod; }
+            }
+
+            return nearest;
         }
     }
 }

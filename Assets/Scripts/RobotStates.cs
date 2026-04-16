@@ -6,7 +6,6 @@ namespace Projeto1IA
     public class RobotStates : AgentStateMachine, IWorkable, IRechargeable
     {
         private readonly ILocationProvider _locations;
-
         private AgentController _controller;
 
         private float _battery;
@@ -24,24 +23,25 @@ namespace Projeto1IA
         private static readonly string[] _workTasks = { "warehouse", "technical", "lab" };
         private string _currentTask;
 
-        public RobotStates(ILocationProvider _locations)
+        public RobotStates(ILocationProvider locations)
         {
-            this._locations = _locations;
-            _battery = Random.Range(60f, 100f);
-            _batteryMin = Random.Range(15f, 25f);
-            _batteryDrainWork = Random.Range(0.3f, 0.7f);
-            _batteryDrainIdle = Random.Range(0.05f, 0.15f);
-            _workDuration = Random.Range(60f, 120f);
-            _rechargeDuration = Random.Range(30f, 60f);
-            _currentTask = _workTasks[Random.Range(0, _workTasks.Length)];
+            _locations = locations;
+            _battery           = Random.Range(60f, 100f);
+            _batteryMin        = Random.Range(15f, 25f);
+            _batteryDrainWork  = Random.Range(0.3f, 0.7f);
+            _batteryDrainIdle  = Random.Range(0.05f, 0.15f);
+            _workDuration      = Random.Range(60f, 120f);
+            _rechargeDuration  = Random.Range(30f, 60f);
+            _currentTask       = _workTasks[Random.Range(0, _workTasks.Length)];
         }
 
-        public void SetController(AgentController _controller) => this._controller = _controller;
+        public void SetController(AgentController controller) => _controller = controller;
 
         public override void Tick()
         {
-            if (_isEvacuating || _isInEmergency) { RespondToIncident(); return; }
-            if (_battery <= _batteryMin) { Recharge(); return; }
+            if (_isEvacuating)   { Evacuate();           return; }
+            if (_isInEmergency)  { RespondToIncident();  return; }
+            if (_battery <= _batteryMin) { Recharge();   return; }
             Work(_currentTask);
         }
 
@@ -51,9 +51,9 @@ namespace Projeto1IA
             return new status();
         }
 
-        public status Work(string _task)
+        public status Work(string task)
         {
-            LocationType _targetType = _task switch
+            LocationType targetType = task switch
             {
                 "warehouse" => LocationType.Warehouse,
                 "technical" => LocationType.Technical,
@@ -63,12 +63,10 @@ namespace Projeto1IA
 
             if (!_destinationSet)
             {
-                Location loc;
-
-                if (_locations.TryGetAvailableLocation(_targetType, out loc))
+                if (_locations.TryGetAvailableLocation(targetType, out Location loc) &&
+                    !IsLocationDangerous(loc.LocationName))
                 {
-                    Vector3 _pos = loc.GetRandomPointInLocation();
-                    _controller.MoveTo(_pos);
+                    _controller.MoveTo(loc.GetRandomPointInLocation());
                     _destinationSet = true;
                 }
                 else
@@ -98,9 +96,9 @@ namespace Projeto1IA
         {
             if (!_destinationSet)
             {
-                Vector3 _pos = _locations.GetRandomPointInLocationType(LocationType.Technical);
-                if (_pos == Vector3.zero) return new status();
-                _controller.MoveTo(_pos);
+                Vector3 pos = _locations.GetRandomPointInLocationType(LocationType.Technical);
+                if (pos == Vector3.zero) return new status();
+                _controller.MoveTo(pos);
                 _destinationSet = true;
             }
 
@@ -120,30 +118,68 @@ namespace Projeto1IA
 
         public override status RespondToIncident()
         {
+            if (_battery <= _batteryMin)
+            {
+                if (!_destinationSet)
+                {
+                    Location area = _locations.FindNearest(_controller.transform.position, LocationType.Technical);
+                    if (area == null || IsLocationDangerous(area.LocationName)) return new status();
+                    _controller.MoveTo(area.GetRandomPointInLocation());
+                    _destinationSet = true;
+                }
+                _battery -= _batteryDrainWork * Time.deltaTime;
+                return new status();
+            }
+
             if (!_destinationSet)
             {
-                Location _area = _locations.FindNearest(_controller.transform.position, LocationType.Technical);
-                if (_area == null) return new status();
+                Incident incident = _controller.CurrentIncident;
+                if (incident == null) return new status();
 
-                Vector3 _pos = _area.GetRandomPointInLocation();
-                if (_pos == Vector3.zero) return new status();
+                Location target = LocationManager.GetLocation(incident.OriginLocationName);
 
-                _controller.MoveTo(_pos);
+                if (target != null && !IsLocationDangerous(target.LocationName))
+                {
+                    _controller.MoveTo(target.GetRandomPointInLocation());
+                }
+                else if (target != null)
+                {
+                    Location[] adjacent = LocationManager.GetAdjacentLocations(target);
+                    foreach (Location adj in adjacent)
+                    {
+                        if (!IsLocationDangerous(adj.LocationName))
+                        {
+                            _controller.MoveTo(adj.GetRandomPointInLocation());
+                            break;
+                        }
+                    }
+                }
+
                 _destinationSet = true;
             }
 
             _battery -= _batteryDrainWork * Time.deltaTime;
-            return new status();
-        }
-        void ChooseAnotherTask()
-        {
-            _destinationSet = false;
-            _workTimer = 0f;
 
-            _currentTask = _workTasks[Random.Range(0, _workTasks.Length)];
+            if (_controller.HasReachedDestination())
+                _destinationSet = false;
+
+            return new status();
         }
 
         public override status Evacuate() => RespondToIncident();
+
+        private bool IsLocationDangerous(string locationName)
+        {
+            if (IncidentManager.Instance == null) return false;
+            return IncidentManager.Instance.IsLocationImpassable(locationName);
+        }
+
+        private void ChooseAnotherTask()
+        {
+            _destinationSet = false;
+            _workTimer = 0f;
+            _currentTask = _workTasks[Random.Range(0, _workTasks.Length)];
+        }
 
         public float BatteryLevel => _battery;
     }
