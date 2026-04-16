@@ -71,6 +71,6 @@ public class Door : MonoBehaviour
 
     public void ActivateObstacle(bool active)
     {
-        _useObstacle = true;
+        _useObstacle = active;
     }
 }
