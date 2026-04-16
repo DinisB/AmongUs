@@ -52,7 +52,12 @@ namespace Projeto1IA
         public void TriggerElectricalFailure() => TriggerIncident(IncidentType.ElectricalFailure, LocationManager.GetRandomLocation().LocationName);
         public void TriggerIncident(IncidentType type, string locationName)
         {
-            if (string.IsNullOrEmpty(locationName)) return;
+            Location location = LocationManager.GetLocation(locationName);
+            if (location.LocationType == LocationType.EscapePod)
+            {
+                Debug.Log("Can't start incidents in pods");
+                return;
+            }
 
             Incident incident = new Incident(type, locationName);
             activeIncidents.Add(incident);
@@ -349,17 +354,14 @@ namespace Projeto1IA
         private void SetDoorsInLocation(string locationName, bool locked)
         {
             Location loc = LocationManager.GetLocation(locationName);
-            if (loc == null) return;
 
             Collider locationCollider = loc.GetComponent<Collider>();
             if (locationCollider == null) return;
 
-            Door[] allDoors = FindObjectsByType<Door>(FindObjectsSortMode.None);
-            foreach (Door door in allDoors)
-            {
-                if (locationCollider.bounds.Contains(door.transform.position))
-                    door.ActivateObstacle(locked);
-            }
+            Door door = loc.Door;
+            if (door != null)
+                door.ActivateObstacle(locked);
+
         }
     }
 }

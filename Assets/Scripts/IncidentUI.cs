@@ -28,7 +28,7 @@ namespace Projeto1IA
 
         private void Update()
         {
-            RefreshAliveCounter();
+            RefreshCounters();
         }
 
         private void OnAgentKilled(AgentController ctrl)

@@ -9,6 +9,8 @@ namespace Projeto1IA
         [SerializeField] private int _locationId = 1;
         [SerializeField] private int _capacity = 10;
 
+        [SerializeField] private Door _door;
+
         private Collider _locationCollider;
         private int _currentOccupancy;
         private float _scanInterval = 0.5f;
@@ -20,6 +22,7 @@ namespace Projeto1IA
         public int Capacity => _capacity;
         public int CurrentOccupancy => _currentOccupancy;
         public bool IsFull => _currentOccupancy >= _capacity;
+        public Door Door => _door;
         public bool CanEnter()
         {
             return !IsFull;

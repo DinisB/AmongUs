@@ -2394,6 +2394,7 @@ MonoBehaviour:
   _locationType: 2
   _locationId: 1
   _capacity: 10
+  _door: {fileID: 1554320393}
 --- !u!1 &65120327
 GameObject:
   m_ObjectHideFlags: 0
@@ -17095,7 +17096,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
   _locationType: 6
   _locationId: 2
-  _capacity: 10
+  _capacity: 2
+  _door: {fileID: 0}
 --- !u!114 &421212800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19542,7 +19544,6 @@ GameObject:
   - component: {fileID: 476818845}
   - component: {fileID: 476818848}
   - component: {fileID: 476818847}
-  - component: {fileID: 476818846}
   m_Layer: 0
   m_Name: Carpet
   m_TagString: Untagged
@@ -19565,28 +19566,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1281916097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &476818846
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476818844}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &476818847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34774,6 +34753,7 @@ MonoBehaviour:
   _locationType: 5
   _locationId: 1
   _capacity: 10
+  _door: {fileID: 1088610030}
 --- !u!1 &840558247
 GameObject:
   m_ObjectHideFlags: 0
@@ -45909,7 +45889,6 @@ GameObject:
   - component: {fileID: 1096186146}
   - component: {fileID: 1096186149}
   - component: {fileID: 1096186148}
-  - component: {fileID: 1096186147}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -45932,29 +45911,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1002326085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1096186147
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096186145}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1096186148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46404,6 +46360,7 @@ MonoBehaviour:
   _locationType: 4
   _locationId: 1
   _capacity: 10
+  _door: {fileID: 1758856464}
 --- !u!1 &1098421935
 GameObject:
   m_ObjectHideFlags: 0
@@ -46415,7 +46372,6 @@ GameObject:
   - component: {fileID: 1098421936}
   - component: {fileID: 1098421939}
   - component: {fileID: 1098421938}
-  - component: {fileID: 1098421937}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -46438,27 +46394,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1002326085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1098421937
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098421935}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1098421938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52256,7 +52191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.IncidentUI
   killedCounterText: {fileID: 1199436890}
   aliveCounterText: {fileID: 313452346}
-  incidentLogText: {fileID: 0}
   evacuationBanner: {fileID: 0}
 --- !u!1 &1223373205
 GameObject:
@@ -52520,6 +52454,7 @@ MonoBehaviour:
   _locationType: 1
   _locationId: 1
   _capacity: 10
+  _door: {fileID: 675812131}
 --- !u!1 &1228202214
 GameObject:
   m_ObjectHideFlags: 0
@@ -53945,7 +53880,6 @@ GameObject:
   - component: {fileID: 1273542327}
   - component: {fileID: 1273542330}
   - component: {fileID: 1273542329}
-  - component: {fileID: 1273542328}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -53968,27 +53902,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 859895003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1273542328
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273542326}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1273542329
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56929,7 +56842,6 @@ GameObject:
   - component: {fileID: 1382144098}
   - component: {fileID: 1382144101}
   - component: {fileID: 1382144100}
-  - component: {fileID: 1382144099}
   m_Layer: 0
   m_Name: Carpet2
   m_TagString: Untagged
@@ -56952,28 +56864,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1448400705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1382144099
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382144097}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1382144100
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58624,6 +58514,7 @@ MonoBehaviour:
   _locationType: 0
   _locationId: 1
   _capacity: 10
+  _door: {fileID: 1134635100}
 --- !u!1 &1444990673
 GameObject:
   m_ObjectHideFlags: 0
@@ -59084,6 +58975,7 @@ MonoBehaviour:
   _locationType: 0
   _locationId: 2
   _capacity: 10
+  _door: {fileID: 1108373916}
 --- !u!1 &1450636764
 GameObject:
   m_ObjectHideFlags: 0
@@ -61131,7 +61023,6 @@ GameObject:
   - component: {fileID: 1518841063}
   - component: {fileID: 1518841066}
   - component: {fileID: 1518841065}
-  - component: {fileID: 1518841064}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -61154,29 +61045,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 859895003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1518841064
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518841062}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1518841065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70274,7 +70142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projeto1IA.Location
   _locationType: 6
   _locationId: 1
-  _capacity: 10
+  _capacity: 2
+  _door: {fileID: 0}
 --- !u!114 &1745600314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75333,7 +75202,6 @@ GameObject:
   - component: {fileID: 1869981230}
   - component: {fileID: 1869981229}
   - component: {fileID: 1869981228}
-  - component: {fileID: 1869981227}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -75341,27 +75209,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1869981227
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869981226}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1869981228
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75978,6 +75825,7 @@ MonoBehaviour:
   _locationType: 3
   _locationId: 1
   _capacity: 10
+  _door: {fileID: 699378032}
 --- !u!1 &1879646778
 GameObject:
   m_ObjectHideFlags: 0
@@ -79995,7 +79843,6 @@ GameObject:
   - component: {fileID: 1995432663}
   - component: {fileID: 1995432666}
   - component: {fileID: 1995432665}
-  - component: {fileID: 1995432664}
   m_Layer: 0
   m_Name: OutsideGround
   m_TagString: Untagged
@@ -80018,28 +79865,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 651847807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1995432664
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995432662}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1995432665
 MeshRenderer:
   m_ObjectHideFlags: 0
