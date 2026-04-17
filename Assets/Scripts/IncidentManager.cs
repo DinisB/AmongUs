@@ -308,7 +308,6 @@ namespace Projeto1IA
 
             agentManager.RemoveController(ctrl);
             OnAgentKilled?.Invoke(ctrl);
-            ctrl.gameObject.SetActive(false);
         }
         private string GetAgentCurrentLocation(AgentController ctrl)
         {
