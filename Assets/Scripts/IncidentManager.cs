@@ -308,22 +308,26 @@ namespace Projeto1IA
 
             agentManager.RemoveController(ctrl);
             OnAgentKilled?.Invoke(ctrl);
+            ctrl.gameObject.SetActive(false);
         }
-
         private string GetAgentCurrentLocation(AgentController ctrl)
         {
             foreach (string name in LocationManager.GetAllLocationNames())
             {
                 Location loc = LocationManager.GetLocation(name);
-                if (loc == null) continue;
 
                 Collider col = loc.GetComponent<Collider>();
-                if (col != null && col.bounds.Contains(ctrl.transform.position))
+
+                Vector3 closestPoint = col.ClosestPoint(ctrl.transform.position);
+
+                if (Vector3.Distance(closestPoint, ctrl.transform.position) < 0.1f)
+                {
                     return name;
+                }
             }
+
             return null;
         }
-
         private void NotifyAllAgents(Incident incident)
         {
             if (agentManager == null) return;

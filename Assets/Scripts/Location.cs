@@ -79,6 +79,23 @@ namespace Projeto1IA
 
             return _randomPoint;
         }
+        private void OnTriggerEnter(Collider other)
+        {
+            AgentController ctrl = other.GetComponent<AgentController>();
+            if (ctrl != null)
+            {
+                ctrl.CurrentLocation = this;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            AgentController ctrl = other.GetComponent<AgentController>();
+            if (ctrl != null && ctrl.CurrentLocation == this)
+            {
+                ctrl.CurrentLocation = null;
+            }
+        }
 
         private bool IsPointOnNavMesh(Vector3 _point)
         {

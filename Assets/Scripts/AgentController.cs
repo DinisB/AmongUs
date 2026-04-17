@@ -8,6 +8,7 @@ namespace Projeto1IA
         private IStateMachineOwner _owner;
         private NavMeshAgent _nav;
         private AgentStateMachine _stateMachine;
+        public Location CurrentLocation { get; set; }
 
         public Incident CurrentIncident { get; set; }
 
