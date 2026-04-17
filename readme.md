@@ -230,6 +230,10 @@ Vimos que os **tripulantes** preferiam ficar nos seus dormitórios, enquanto pou
 
 No final, o projeto acabou com alguns problemas como estes, que possam ser solucionados com outros tipos de movimento ou mesmo de pensamento da I.A, mas mesmo assim, os agentes têm capacidade de reagir consoante os incidentes, mesmo que não seja de uma maneira precisa.
 
+## Agradecimentos
+
+Foi utilizado algum código do Moodle pelo professor, bem como a informação dos slides sobre os tipos de State Machines. 
+
 ## Referências
 
 - Unity Technologies. (n.d.). NavMesh Agent. *Unity Manual*. Retrieved April 17, 2026, from https://docs.unity3d.com/Manual/class-NavMeshAgent.html
