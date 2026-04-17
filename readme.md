@@ -9,7 +9,6 @@
 #### Carga de Trabalho
 
 - Dinis Barroso:
-
   Programação dos FSM e Sistema de movimento dos agentes, bem como os seus controladores,scripts de construtor, factory e Finite State Machines.
 
   Criação dos scripts de visualização dos incidentes, e programação inicial dos mesmos.
@@ -23,6 +22,7 @@
 
 
 - Gonçalo Ribeiro:
+  A minha principal contribuiçao neste projeto foi a criação do layout para o projeto: as áreas principais e corredores, e a criação dos scripts para os incidentes
 
 ## Introdução
 
