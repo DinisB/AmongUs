@@ -236,6 +236,8 @@ Foi utilizado algum código do Moodle pelo professor, bem como a informação do
 
 ## Referências
 
+- Foram utilizado sugestões de I.A para solucionar um erro do ```IncidentManager.cs``` que impossibilitava a morte de agentes.
+
 - Unity Technologies. (n.d.). NavMesh Agent. *Unity Manual*. Retrieved April 17, 2026, from https://docs.unity3d.com/Manual/class-NavMeshAgent.html
 
 - K. Cheliotis, “ABMU: An Agent-Based Modelling Framework for Unity3D,” SoftwareX, vol. 15, p. 100771, 2021.
