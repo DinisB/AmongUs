@@ -10,8 +10,8 @@ namespace Projeto1IA
         [SerializeField] private Color electricColor = Color.yellow;
         [SerializeField] private Color defaultColor = Color.white;
 
-        private Dictionary<Location, Renderer> locationRenderers = new Dictionary<Location, Renderer>();
-        private Dictionary<Renderer, Color> originalColors = new Dictionary<Renderer, Color>();
+        private IDictionary<Location, Renderer> locationRenderers = new Dictionary<Location, Renderer>();
+        private IDictionary<Renderer, Color> originalColors = new Dictionary<Renderer, Color>();
 
         private void Start()
         {

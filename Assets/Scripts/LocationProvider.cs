@@ -27,7 +27,7 @@ namespace Projeto1IA
         {
             Location[] locations = LocationManager.GetLocationsByType(type);
 
-            System.Collections.Generic.List<Location> available =
+            System.Collections.Generic.IList<Location> available =
                 locations.Where(l => l.CanEnter()).ToList();
 
             if (available.Count > 0)

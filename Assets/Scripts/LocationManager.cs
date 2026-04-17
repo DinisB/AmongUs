@@ -9,7 +9,7 @@ namespace Projeto1IA
         private static IDictionary<string, Location> _locations = new Dictionary<string, Location>();
         [SerializeField] private LayerMask _agentLayer;
 
-        private static Dictionary<string, List<string>> _adjacency = new Dictionary<string, List<string>>();
+        private static IDictionary<string, IList<string>> _adjacency = new Dictionary<string, IList<string>>();
 
         public static void RegisterLocation(Location _location)
         {
@@ -73,7 +73,7 @@ namespace Projeto1IA
 
         public static Location[] GetAdjacentLocations(Location location)
         {
-            if (_adjacency.TryGetValue(location.LocationName, out List<string> names))
+            if (_adjacency.TryGetValue(location.LocationName, out IList<string> names))
             {
                 return names
                     .Select(n => GetLocation(n))

@@ -11,7 +11,7 @@ namespace Projeto1IA
         [SerializeField] private int _capacity = 10;
         [SerializeField] private Door _door;
 
-        [SerializeField] private List<Location> _adjacentLocations = new List<Location>();
+        [SerializeField] private IList<Location> _adjacentLocations = new List<Location>();
 
         private Collider _locationCollider;
         private int _currentOccupancy;

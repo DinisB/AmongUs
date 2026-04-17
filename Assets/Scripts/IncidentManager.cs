@@ -16,10 +16,10 @@ namespace Projeto1IA
         [SerializeField] private float killCheckInterval = 0.5f;
         [SerializeField] private float oxygenDangerTolerance = 5f;
 
-        private List<Incident> activeIncidents = new List<Incident>();
+        private IList<Incident> activeIncidents = new List<Incident>();
         private bool evacuationTriggered = false;
 
-        private Dictionary<AgentController, float> oxygenExposure = new Dictionary<AgentController, float>();
+        private IDictionary<AgentController, float> oxygenExposure = new Dictionary<AgentController, float>();
 
         public event Action<Incident> OnIncidentTriggered;
         public event Action<Incident> OnIncidentSpread;
@@ -86,7 +86,7 @@ namespace Projeto1IA
             OnIncidentResolved?.Invoke(incident);
         }
 
-        public List<Incident> GetActiveIncidents() => activeIncidents;
+        public IList<Incident> GetActiveIncidents() => activeIncidents;
 
         public bool IsLocationImpassable(string locationName) =>
             activeIncidents.Any(i => i.IsLocationImpassable(locationName));
@@ -139,7 +139,7 @@ namespace Projeto1IA
 
         private void SpreadIncident(Incident incident)
         {
-            List<string> toSpread = new List<string>();
+            IList<string> toSpread = new List<string>();
 
             foreach (string locationName in incident.AffectedLocations.ToList())
             {
