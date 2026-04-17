@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Area manager with capacity and random point generation
+    /// </summary>
     public class NavigationArea : MonoBehaviour
     {
         [SerializeField] private string areaName;
@@ -27,6 +30,10 @@ namespace Projeto1IA
             }
         }
 
+        /// <summary>
+        /// Get a random point inside this area
+        /// </summary>
+        /// <returns>Random point within the area bounds</returns>
         public Vector3 GetRandomPointInArea()
         {
             if (areaCollider == null) return transform.position;

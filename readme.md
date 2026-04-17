@@ -135,7 +135,7 @@ stateDiagram
     end note
 ```
 
-Os valores do simulador podem ser modificados, podendo serem mudados o número de agentes que nascem e quantos agentes podem estar numa ```Location.cs```. Cada agente tem valores de velocidade e de tempo, mas esses não são parametrizados, tendo de ser modificados por código.
+Os valores do simulador podem ser modificados, podendo serem mudados o número de agentes que nascem e quantos agentes podem estar numa ```Location.cs```. Cada agente tem valores de velocidade e de tempo, mas esses não são parametrizados no inspector, tendo de ser modificados por código.
 
 Também é possível modificar os valores dos incidents pelo ```IncidentManager.cs```, a velocidade de propagação, quanto demora um incidente e número máximo de propagação.
 
@@ -191,6 +191,8 @@ Consoante os nossos testes, verificamos que no inicio os agentes tentam passar s
 
 Adicionalmente, alguns agentes começam dentro do dormitório/zona técnica pois não começam recarregados.
 
+Com 200 agentes, o jogo começa a custar no processador, e impossibilita as rotinas dos mesmos pois não têm espaço para se mover (Mas facilmente modificavel no cenário).
+
 ![Exemplo 3](ex3.png)
 
 Verificámos também que quando uma porta é completamente bloqueada por corpos, os outros agentes são impossibilitados de realizar as suas tarefas, mas continuam a tentar.
@@ -230,11 +232,10 @@ No final, o projeto acabou com alguns problemas como estes, que possam ser soluc
 
 ## Referências
 
-- Unity Technologies, “NavMesh Agent,” Unity Manual. [Online]. Available: https://docs.unity3d.com/Manual/class-NavMeshAgent.html
+- Unity Technologies. (n.d.). NavMesh Agent. *Unity Manual*. Retrieved April 17, 2026, from https://docs.unity3d.com/Manual/class-NavMeshAgent.html
 
 - K. Cheliotis, “ABMU: An Agent-Based Modelling Framework for Unity3D,” SoftwareX, vol. 15, p. 100771, 2021.
 
-- Z. Guo, Y. Huang, H. Chu, and R. Sengupta, “Evacuation Simulation Implemented by ABM-BIM of Unity in Students’ Dormitory Based on Delay Time,” ISPRS International Journal of Geo-Information, vol. 12, no. 4, p. 160, 2023.
+- Z. Guo, Y. Huang, H. Chu, & R. Sengupta. (2023). Evacuation Simulation Implemented by ABM-BIM of Unity in Students' Dormitory Based on Delay Time. *ISPRS International Journal of Geo-Information*, *12*(4), 160.
 
-- Behavior Trees or Finite State Machines. Opsive. https://opsive.com/support/documentation/behavior-designer/behavior-trees-or-finite-state-machines/
-‌
+- Opsive. (n.d.). Behavior Trees or Finite State Machines. Retrieved April 17, 2026, from https://opsive.com/support/documentation/behavior-designer/behavior-trees-or-finite-state-machines/

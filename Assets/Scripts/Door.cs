@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Automatic doors that open if someones nearby
+/// or don't if affected by failure
+/// </summary>
 public class Door : MonoBehaviour
 {
     [SerializeField] private bool _vertical = false;
@@ -69,6 +73,10 @@ public class Door : MonoBehaviour
         _doorVisual.transform.position = _ogPosition;
     }
 
+    /// <summary>
+    /// Lock or unlock the door by enabling the NavMesh obstacle
+    /// </summary>
+    /// <param name="active">True to lock, false to unlock</param>
     public void ActivateObstacle(bool active)
     {
         _useObstacle = active;

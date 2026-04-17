@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// FSM for crewmate agents
+    /// which includes work, sleep, restock, response to incidents and evacuation
+    /// </summary>
     public class CrewmateStates : AgentStateMachine, IWorkable, IRestable
     {
         private readonly ILocationProvider _locations;
@@ -206,7 +210,11 @@ namespace Projeto1IA
             return;
         }
 
-
+        /// <summary>
+        /// Check if a location is dangerous for crewmates due to active incidents
+        /// </summary>
+        /// <param name="locationName">Location to check</param>
+        /// <returns>True if location is dangerous</returns>
         private bool IsLocationDangerous(string locationName)
         {
             if (IncidentManager.Instance == null) return false;

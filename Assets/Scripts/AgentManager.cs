@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Manages spawning, and removal of agents
+    /// </summary>
     public class AgentManager : MonoBehaviour
     {
         [SerializeField] private int[] numbers;
@@ -46,6 +49,12 @@ namespace Projeto1IA
             _controllers.Add(controller);
         }
 
+        /// <summary>
+        /// Determine initial spawn position, with crewmates spawning in their assigned dorm, robots in technical areas
+        /// </summary>
+        /// <param name="typeIndex">Index of agent type</param>
+        /// <param name="owner">Agent instance</param>
+        /// <returns>Spawn position as Vector3</returns>
         private Vector3 ResolveSpawnPosition(int typeIndex, IStateMachineOwner owner)
         {
             Vector3 pos = Vector3.zero;
@@ -83,6 +92,10 @@ namespace Projeto1IA
 
         public IList<AgentController> GetControllers() => _controllers;
 
+        /// <summary>
+        /// Remove a controller from the active list, for when agents die
+        /// </summary>
+        /// <param name="ctrl">Controller to remove</param>
         public void RemoveController(AgentController ctrl)
         {
             _controllers.Remove(ctrl);

@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// FSM for robot agents
+    /// includes work, recharge, responses to incidents and evacuation
+    /// </summary>
     public class RobotStates : AgentStateMachine, IWorkable, IRechargeable
     {
         private readonly ILocationProvider _locations;

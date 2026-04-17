@@ -1,10 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Displays killed and alive counters
+    /// </summary>
     public class IncidentUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text killedCounterText;

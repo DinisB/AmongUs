@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Central registry for navigation areas
+    /// </summary>
     public class NavigationManager : MonoBehaviour
     {
         private static Dictionary<string, NavigationArea> areas = new Dictionary<string, NavigationArea>();
@@ -12,6 +15,11 @@ namespace Projeto1IA
         private void Awake()
         {
             RegisterAllAreas();
+
+            if (instance == null)
+            {
+                instance = this;
+            }
         }
 
         private void RegisterAllAreas()
@@ -30,6 +38,11 @@ namespace Projeto1IA
             }
         }
 
+        /// <summary>
+        /// Get a random point inside a named area if its not full
+        /// </summary>
+        /// <param name="areaName">Name of the area</param>
+        /// <returns>Random point or nothing if full</returns>
         public static Vector3 GetRandomPointInArea(string areaName)
         {
             if (areas.ContainsKey(areaName))
@@ -57,6 +70,12 @@ namespace Projeto1IA
             return areas.Values.Where(area => area.AreaType == areaType).ToArray();
         }
 
+        /// <summary>
+        /// Find the nearest area of a given type to a position
+        /// </summary>
+        /// <param name="position">Reference position</param>
+        /// <param name="areaType">Type of area to find</param>
+        /// <returns>Nearest area or null</returns>
         public static NavigationArea FindNearestArea(Vector3 position, AreaType areaType)
         {
             NavigationArea[] areasOfType = GetAreasByType(areaType);

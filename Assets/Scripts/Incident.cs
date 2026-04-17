@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Data container for active incident, tracking locations
+    /// </summary>
     public class Incident
     {
         public IncidentType Type { get; private set; }
@@ -23,11 +26,19 @@ namespace Projeto1IA
             AffectedLocations.Add(originLocationName);
         }
 
+        /// <summary>
+        /// Mark a location as affected by this incident
+        /// </summary>
+        /// <param name="locationName">Location to affect</param>
         public void SpreadTo(string locationName)
         {
             AffectedLocations.Add(locationName);
         }
 
+        /// <summary>
+        /// Mark a location as impassable
+        /// </summary>
+        /// <param name="locationName">Location</param>
         public void MakeImpassable(string locationName)
         {
             ImpassableLocations.Add(locationName);

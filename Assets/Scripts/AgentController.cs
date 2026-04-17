@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Acts as controller for agents
+    /// </summary>
     public class AgentController : MonoBehaviour
     {
         private IStateMachineOwner _owner;
@@ -34,12 +37,20 @@ namespace Projeto1IA
 
         private void Update() => _stateMachine.Tick();
 
+        /// <summary>
+        /// Set the agents destination on the NavMesh
+        /// </summary>
+        /// <param name="_pos">Target position</param>
         public void MoveTo(Vector3 _pos)
         {
             if (_nav != null && _nav.isOnNavMesh)
                 _nav.SetDestination(_pos);
         }
 
+        /// <summary>
+        /// Check if the agent has reached its current destination
+        /// </summary>
+        /// <returns>True if path is complete</returns>
         public bool HasReachedDestination()
         {
             return _nav != null &&

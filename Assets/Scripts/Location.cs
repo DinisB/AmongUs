@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Represents a physical area in the base with capacity, occupancy tracking, and random point generation
+    /// </summary>
     public class Location : MonoBehaviour
     {
         [SerializeField] private LocationType _locationType;
@@ -71,6 +74,10 @@ namespace Projeto1IA
             _currentOccupancy = _count;
         }
 
+        /// <summary>
+        /// Generate a random point inside this location bounds that lies on the NavMesh
+        /// </summary>
+        /// <returns>Valid NavMesh point, or zero if none found</returns>
         public Vector3 GetRandomPointInLocation()
         {
             Bounds _bounds = _locationCollider.bounds;

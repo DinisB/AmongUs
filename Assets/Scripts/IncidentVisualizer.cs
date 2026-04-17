@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Changes the color of location renderers based on active incidents
+    /// </summary>
     public class IncidentVisualizer : MonoBehaviour
     {
         [SerializeField] private Color fireColor = Color.red;
@@ -60,6 +63,10 @@ namespace Projeto1IA
             RefreshLocationHighlights();
         }
 
+
+        /// <summary>
+        /// Refreshes color of locations
+        /// </summary>
         private void RefreshLocationHighlights()
         {
             if (IncidentManager.Instance == null) return;

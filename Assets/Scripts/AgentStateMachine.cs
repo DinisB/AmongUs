@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Base class for agent FSM with emergency and evacuation states
+    /// </summary>
     public abstract class AgentStateMachine : IEmergencyResponder
     {
         protected bool _isInEmergency;

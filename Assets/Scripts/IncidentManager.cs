@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Projeto1IA
 {
+    /// <summary>
+    /// Central manager for incidents
+    /// </summary>
     public class IncidentManager : MonoBehaviour
     {
         public static IncidentManager Instance { get; private set; }
@@ -50,6 +53,12 @@ namespace Projeto1IA
         public void TriggerFire() => TriggerIncident(IncidentType.Fire, LocationManager.GetRandomLocation().LocationName);
         public void TriggerOxygenLeak() => TriggerIncident(IncidentType.OxygenLeak, LocationManager.GetRandomLocation().LocationName);
         public void TriggerElectricalFailure() => TriggerIncident(IncidentType.ElectricalFailure, LocationManager.GetRandomLocation().LocationName);
+
+        /// <summary>
+        /// Start a new incident at a specific location
+        /// </summary>
+        /// <param name="type">Type of incident</param>
+        /// <param name="locationName">Name of the location where it starts</param>
         public void TriggerIncident(IncidentType type, string locationName)
         {
             Location location = LocationManager.GetLocation(locationName);
@@ -67,9 +76,13 @@ namespace Projeto1IA
 
             OnIncidentTriggered?.Invoke(incident);
 
-            Debug.Log($"[IncidentManager] {type} triggered at {locationName}");
+            Debug.Log($"{type} triggered at {locationName}");
         }
 
+        /// <summary>
+        /// Mark an incident as resolved and remove it from active list
+        /// </summary>
+        /// <param name="incident">Incident to resolve</param>
         public void ResolveIncident(Incident incident)
         {
             if (!activeIncidents.Contains(incident)) return;
@@ -88,9 +101,19 @@ namespace Projeto1IA
 
         public IList<Incident> GetActiveIncidents() => activeIncidents;
 
+        /// <summary>
+        /// Check if a location is impassable due to any active incident
+        /// </summary>
+        /// <param name="locationName">Location to check</param>
+        /// <returns>True if location is impassable</returns>
         public bool IsLocationImpassable(string locationName) =>
             activeIncidents.Any(i => i.IsLocationImpassable(locationName));
 
+        /// <summary>
+        /// Check if a location is affected by any incident
+        /// </summary>
+        /// <param name="locationName">Location to check</param>
+        /// <returns>True if any incident affects this location</returns>
         public bool IsLocationAffected(string locationName) =>
             activeIncidents.Any(i => i.IsLocationAffected(locationName));
 
@@ -115,6 +138,10 @@ namespace Projeto1IA
             }
         }
 
+
+        /// <summary>
+        /// Resolve all active incidents
+        /// </summary>
         public void ResolveAllIncidents()
         {
             foreach (Incident incident in activeIncidents.ToList())
@@ -137,6 +164,10 @@ namespace Projeto1IA
             }
         }
 
+        /// <summary>
+        /// Spreads an incident to adjacent locations
+        /// </summary>
+        /// <returns></returns>
         private void SpreadIncident(Incident incident)
         {
             IList<string> toSpread = new List<string>();
@@ -263,7 +294,7 @@ namespace Projeto1IA
         private void TriggerEvacuation()
         {
             evacuationTriggered = true;
-            Debug.Log("[IncidentManager] EVACUATION triggered.");
+            Debug.Log("Evacuation triggered.");
 
             if (agentManager == null) return;
 
@@ -276,6 +307,11 @@ namespace Projeto1IA
             OnEvacuationTriggered?.Invoke();
         }
 
+        /// <summary>
+        /// Kill all agents currently inside a given location
+        /// </summary>
+        /// <param name="locationName">Target location</param>
+        /// <param name="killRobots">If false, robots are spared</param>
         private void KillAgentsInLocation(string locationName, bool killRobots)
         {
             if (agentManager == null) return;
@@ -295,7 +331,7 @@ namespace Projeto1IA
             if (ctrl == null) return;
             oxygenExposure.Remove(ctrl);
 
-            Debug.Log($"[IncidentManager] Agent killed: {ctrl.gameObject.name}");
+            Debug.Log($"Agent killed: {ctrl.gameObject.name}");
 
             UnityEngine.AI.NavMeshAgent nav = ctrl.GetComponent<UnityEngine.AI.NavMeshAgent>();
             if (nav != null)
@@ -317,6 +353,12 @@ namespace Projeto1IA
             agentManager.RemoveController(ctrl);
             OnAgentKilled?.Invoke(ctrl);
         }
+
+        /// <summary>
+        /// Determine which location an agent is currently inside by checking collider containment
+        /// </summary>
+        /// <param name="ctrl">Agent controller</param>
+        /// <returns>Name of the location or null if not inside any</returns>
         private string GetAgentCurrentLocation(AgentController ctrl)
         {
             foreach (string name in LocationManager.GetAllLocationNames())
@@ -335,6 +377,7 @@ namespace Projeto1IA
 
             return null;
         }
+
         private void NotifyAllAgents(Incident incident)
         {
             if (agentManager == null) return;
@@ -362,6 +405,11 @@ namespace Projeto1IA
             }
         }
 
+        /// <summary>
+        /// Lock or unlock the door of a specific location
+        /// </summary>
+        /// <param name="locationName">Location whose door to affect</param>
+        /// <param name="locked">True to lock (activate obstacle), false to unlock</param>
         private void SetDoorsInLocation(string locationName, bool locked)
         {
             Location loc = LocationManager.GetLocation(locationName);
