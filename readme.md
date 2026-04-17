@@ -10,13 +10,17 @@
 
 - Dinis Barroso:
 
-  Programação dos FSM e Sistema de movimento dos agentes, bem como os seus controladores e scripts de construtor e factory.
+  Programação dos FSM e Sistema de movimento dos agentes, bem como os seus controladores,scripts de construtor, factory e Finite State Machines.
 
-  Criação dos scripts de visualização dos incidentes.
+  Criação dos scripts de visualização dos incidentes, e programação inicial dos mesmos.
 
   Escrita do relatório.
 
 - Frederico Carvalho:
+  A minha principal contribuição para o projeto consistiu na melhoria do sistema de deteção de localização dos agentes, através da implementação de uma abordagem baseada em triggers utilizando colliders. Esta alteração permitiu que os agentes identificassem corretamente quando se encontram dentro de uma localização, resolvendo um problema crítico em que não estavam a ser detetados corretamente. Como consequência, foi possível corrigir uma falha no sistema de incidentes, onde os agentes não morriam quando expostos a incêndios ou fugas de oxigénio.
+  
+  Para além disso, configurei e ajustei os colliders de cada localização de forma a cobrirem corretamente as áreas das salas, o que foi essencial para assegurar uma deteção fiável. Por fim, criei e organizei os assets das salas em todas as areas.
+
 
 - Gonçalo Ribeiro:
 
