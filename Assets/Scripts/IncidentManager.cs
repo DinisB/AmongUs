@@ -115,6 +115,14 @@ namespace Projeto1IA
             }
         }
 
+        public void ResolveAllIncidents()
+        {
+            foreach (Incident incident in activeIncidents.ToList())
+            {
+                ResolveIncident(incident);
+            }
+        }
+
         private IEnumerator SpreadRoutine()
         {
             while (true)
@@ -300,10 +308,10 @@ namespace Projeto1IA
 
             if (ctrl.GetComponent<UnityEngine.AI.NavMeshObstacle>() == null)
             {
-                UnityEngine.AI.NavMeshObstacle obs = ctrl.gameObject.AddComponent<UnityEngine.AI.NavMeshObstacle>();
-                obs.carving = true;
-                obs.radius = 0.4f;
-                obs.height = 1.8f;
+                UnityEngine.AI.NavMeshObstacle obj = ctrl.gameObject.AddComponent<UnityEngine.AI.NavMeshObstacle>();
+                obj.carving = true;
+                obj.radius = 0.4f;
+                obj.height = 1.8f;
             }
 
             agentManager.RemoveController(ctrl);

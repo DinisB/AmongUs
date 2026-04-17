@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 namespace Projeto1IA
 {
@@ -8,8 +9,9 @@ namespace Projeto1IA
         [SerializeField] private LocationType _locationType;
         [SerializeField] private int _locationId = 1;
         [SerializeField] private int _capacity = 10;
-
         [SerializeField] private Door _door;
+
+        [SerializeField] private List<Location> _adjacentLocations = new List<Location>();
 
         private Collider _locationCollider;
         private int _currentOccupancy;
@@ -35,6 +37,14 @@ namespace Projeto1IA
             _locationCollider = GetComponent<Collider>();
             _agentLayer = FindFirstObjectByType<LocationManager>().GetComponent<LocationManager>().AgentLayer;
             LocationManager.RegisterLocation(this);
+
+            foreach (Location adjacent in _adjacentLocations)
+            {
+                if (adjacent != null)
+                {
+                    LocationManager.AddAdjacency(this.LocationName, adjacent.LocationName);
+                }
+            }
         }
 
         private void OnDestroy()

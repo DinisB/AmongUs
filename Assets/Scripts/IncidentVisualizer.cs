@@ -8,7 +8,6 @@ namespace Projeto1IA
         [SerializeField] private Color fireColor = Color.red;
         [SerializeField] private Color oxygenColor = Color.blue;
         [SerializeField] private Color electricColor = Color.yellow;
-        [SerializeField] private Color impassableColor = Color.gray;
         [SerializeField] private Color defaultColor = Color.white;
 
         private Dictionary<Location, Renderer> locationRenderers = new Dictionary<Location, Renderer>();
@@ -65,7 +64,7 @@ namespace Projeto1IA
         {
             if (IncidentManager.Instance == null) return;
 
-            foreach (var kvp in locationRenderers)
+            foreach (KeyValuePair<Location, Renderer> kvp in locationRenderers)
             {
                 Location loc = kvp.Key;
                 Renderer rend = kvp.Value;
@@ -75,12 +74,7 @@ namespace Projeto1IA
 
                 foreach (Incident inc in IncidentManager.Instance.GetActiveIncidents())
                 {
-                    if (inc.IsLocationImpassable(loc.LocationName))
-                    {
-                        targetColor = impassableColor;
-                        break;
-                    }
-                    else if (inc.IsLocationAffected(loc.LocationName))
+                    if (inc.IsLocationAffected(loc.LocationName))
                     {
                         targetColor = inc.Type switch
                         {
