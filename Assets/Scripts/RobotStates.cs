@@ -1,5 +1,4 @@
 using UnityEngine;
-using Active.Core;
 
 namespace Projeto1IA
 {
@@ -45,13 +44,13 @@ namespace Projeto1IA
             Work(_currentTask);
         }
 
-        public status Idle()
+        public void Idle()
         {
             _battery -= _batteryDrainIdle * Time.deltaTime;
-            return new status();
+            return;
         }
 
-        public status Work(string task)
+        public void Work(string task)
         {
             LocationType targetType = task switch
             {
@@ -72,7 +71,7 @@ namespace Projeto1IA
                 else
                 {
                     ChooseAnotherTask();
-                    return new status();
+                    return;
                 }
             }
 
@@ -89,15 +88,15 @@ namespace Projeto1IA
                 }
             }
 
-            return new status();
+            return;
         }
 
-        public status Recharge()
+        public void Recharge()
         {
             if (!_destinationSet)
             {
                 Vector3 pos = _locations.GetRandomPointInLocationType(LocationType.Technical);
-                if (pos == Vector3.zero) return new status();
+                if (pos == Vector3.zero) return;
                 _controller.MoveTo(pos);
                 _destinationSet = true;
             }
@@ -113,28 +112,28 @@ namespace Projeto1IA
                 }
             }
 
-            return new status();
+            return;
         }
 
-        public override status RespondToIncident()
+        public override void RespondToIncident()
         {
             if (_battery <= _batteryMin)
             {
                 if (!_destinationSet)
                 {
                     Location area = _locations.FindNearest(_controller.transform.position, LocationType.Technical);
-                    if (area == null || IsLocationDangerous(area.LocationName)) return new status();
+                    if (area == null || IsLocationDangerous(area.LocationName)) return;
                     _controller.MoveTo(area.GetRandomPointInLocation());
                     _destinationSet = true;
                 }
                 _battery -= _batteryDrainWork * Time.deltaTime;
-                return new status();
+                return;
             }
 
             if (!_destinationSet)
             {
                 Incident incident = _controller.CurrentIncident;
-                if (incident == null) return new status();
+                if (incident == null) return;
 
                 Location target = LocationManager.GetLocation(incident.OriginLocationName);
 
@@ -163,10 +162,10 @@ namespace Projeto1IA
             if (_controller.HasReachedDestination())
                 _destinationSet = false;
 
-            return new status();
+            return;
         }
 
-        public override status Evacuate() => RespondToIncident();
+        public override void Evacuate() => RespondToIncident();
 
         private bool IsLocationDangerous(string locationName)
         {

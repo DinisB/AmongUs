@@ -1,27 +1,26 @@
-using Active.Core;
 
 namespace Projeto1IA
 {
     public interface IWorkable
     {
-        status Work(string task);
-        status Idle();
+        void Work(string task);
+        void Idle();
     }
 
     public interface IRestable
     {
-        status Sleep();
-        status Restock();
+        void Sleep();
+        void Restock();
     }
 
     public interface IRechargeable
     {
-        status Recharge();
+        void Recharge();
     }
 
     public interface IEmergencyResponder
     {
-        status RespondToIncident();
-        status Evacuate();
+        void RespondToIncident();
+        void Evacuate();
     }
 }

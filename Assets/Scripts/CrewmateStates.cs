@@ -1,5 +1,4 @@
 using UnityEngine;
-using Active.Core;
 
 namespace Projeto1IA
 {
@@ -64,9 +63,12 @@ namespace Projeto1IA
             Work(_currentTask);
         }
 
-        public status Idle() => new status();
+        public void Idle()
+        {
+            return;
+        }
 
-        public status Work(string task)
+        public void Work(string task)
         {
             LocationType targetType = task switch
             {
@@ -88,7 +90,7 @@ namespace Projeto1IA
                 else
                 {
                     _destinationSet = false;
-                    return new status();
+                    return;
                 }
             }
 
@@ -102,10 +104,10 @@ namespace Projeto1IA
                 }
             }
 
-            return new status();
+            return;
         }
 
-        public status Sleep()
+        public void Sleep()
         {
             if (!_destinationSet)
             {
@@ -120,7 +122,7 @@ namespace Projeto1IA
                 else
                 {
                     _destinationSet = false;
-                    return new status();
+                    return;
                 }
             }
 
@@ -135,10 +137,10 @@ namespace Projeto1IA
                 }
             }
 
-            return new status();
+            return;
         }
 
-        public status Restock()
+        public void Restock()
         {
             if (!_destinationSet)
             {
@@ -151,7 +153,7 @@ namespace Projeto1IA
                 else
                 {
                     _destinationSet = false;
-                    return new status();
+                    return;
                 }
             }
 
@@ -166,10 +168,10 @@ namespace Projeto1IA
                 }
             }
 
-            return new status();
+            return;
         }
 
-        public override status RespondToIncident()
+        public override void RespondToIncident()
         {
             if (!_destinationSet)
             {
@@ -185,23 +187,23 @@ namespace Projeto1IA
             if (_controller.HasReachedDestination())
                 _destinationSet = false;
 
-            return new status();
+            return;
         }
 
-        public override status Evacuate()
+        public override void Evacuate()
         {
             if (!_destinationSet)
             {
                 NavigationArea pod = FindSafeEscapePod();
-                if (pod == null) return new status();
+                if (pod == null) return;
 
                 Vector3 pos = pod.GetRandomPointInArea();
-                if (pos == Vector3.zero) return new status();
+                if (pos == Vector3.zero) return;
 
                 _controller.MoveTo(pos);
                 _destinationSet = true;
             }
-            return new status();
+            return;
         }
 
 

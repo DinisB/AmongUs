@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Active.Core;
 
 namespace Projeto1IA
 {
@@ -33,7 +32,7 @@ namespace Projeto1IA
         }
 
         public abstract void Tick();
-        public abstract status RespondToIncident();
-        public abstract status Evacuate();
+        public abstract void RespondToIncident();
+        public abstract void Evacuate();
     }
 }

@@ -28,3 +28,11 @@
 
     - **ABMU: An Agent-Based Modelling Framework for Unity3D** para desenvolver o movimento em NavMesh e comportamento dos agentes, onde cada um tem os seus "Tick" por segundo e as suas variáveis, que lhes atualizam a rotina.
     - **Evacuation Simulation Implemented by ABM-BIM of Unity** para desenvolver o comportamento dos agentes consoante um incidente esteja a acontecer.
+
+## Metodologia
+
+![Exemplo 1](ex1.png)
+
+O projeto foi implementado em 2.5D, sem verticalidade por opção, com movimentação dinâmica, onde os agentes tentam encontrar caminhos para evitar colisões, com uma velocidade decidida aleatoriamente.
+
+Cada agente contem uma Máquina de Estados finitos (FSM), implementada com ```AgentStateMachine.cs``` que atualiza cada frame pelo método ```Tick.cs```. Inicialmente pensámos em fazer uma Behaviour Tree com o uso de ActiveLT mas mudámos para esta abordagem mais hábil.
